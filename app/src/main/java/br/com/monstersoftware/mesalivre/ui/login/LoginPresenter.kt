@@ -48,4 +48,5 @@ class LoginPresenter(loginView: LoginActivity) : LoginContract.Presenter, Corout
             }
         }
     }
+
 }

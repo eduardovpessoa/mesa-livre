@@ -20,11 +20,11 @@
     <string name="cnpj">CNPJ</string>
     <string name="username">Usuário</string>
     <string name="razao_social">Razão Social</string>
-    <string name="cadastrar">Cadastrar</string>
-    <string name="administrador">Administrador</string>
+    <string name="register_user">Cadastrar</string>
+    <string name="administrator">Administrador</string>
     <string name="rh">RH</string>
-    <string name="profissional">Profissional</string>
-    <string name="tipo_usuario">Qual o seu tipo de usuário?</string>
+    <string name="professional">Profissional</string>
+    <string name="user_type">Qual o seu tipo de usuário?</string>
     <string name="login">Login</string>
     <string name="or">OU</string>
     <string name="new_user">Você é novo?</string>
@@ -32,4 +32,11 @@
     <string name="login_error">Usuário ou senha inválidos!</string>
     <string name="login_user_error">Usuário inválido!</string>
     <string name="login_passwd_error">Senha inválida!</string>
+    <string name="communicate">Communicate</string>
+    <string name="rg">RG</string>
+    <string name="cpf">CPF</string>
+    <string name="name">Nome</string>
+    <string name="phone">Celular</string>
+    <string name="facebook_login">Login via Facebook disponível em breve...</string>
+    <string name="google_login">Login via Google disponível em breve...</string>
 </resources>

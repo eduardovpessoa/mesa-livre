@@ -9,5 +9,4 @@ class MainPresenter(mainView : MainActivity) : MainContract.Presenter {
     }
 
 
-
 }

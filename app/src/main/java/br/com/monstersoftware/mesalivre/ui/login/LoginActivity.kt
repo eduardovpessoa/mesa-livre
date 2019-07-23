@@ -18,8 +18,16 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     override fun initViews() {
         btnLogin.setOnClickListener { presenter?.doLogin(edtUser.text.toString(), edtPass.text.toString()) }
-        lblLogin.setOnClickListener { presenter?.openRegister()}
-        txtLogin.setOnClickListener { presenter?.openRegister()}
+        lblLogin.setOnClickListener { presenter?.openRegister() }
+        txtLogin.setOnClickListener { presenter?.openRegister() }
+    }
+
+    override fun facebookLogin() {
+        Toast.makeText(this, getString(R.string.facebook_login), Toast.LENGTH_LONG).show()
+    }
+
+    override fun googleLogin() {
+        Toast.makeText(this, getString(R.string.google_login), Toast.LENGTH_LONG).show()
     }
 
     override fun setUsernameError() {

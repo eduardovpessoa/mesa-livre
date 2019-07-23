@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.monstersoftware.mesalivre.R
+import br.com.monstersoftware.mesalivre.data.local.entity.User
+import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterContract.View {
 
@@ -16,7 +18,8 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     }
 
     override fun initViews() {
-
+        rgType.setOnCheckedChangeListener { _, i -> presenter?.changeUserType(i) }
+        //btnRegister.setOnClickListener { presenter?.register(User()) }
     }
 
     override fun registerOk() {

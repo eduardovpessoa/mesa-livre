@@ -4,6 +4,8 @@ interface LoginContract {
 
     interface View {
         fun initViews()
+        fun facebookLogin()
+        fun googleLogin()
         fun setUsernameError()
         fun setPasswordError()
         fun showLoginError()

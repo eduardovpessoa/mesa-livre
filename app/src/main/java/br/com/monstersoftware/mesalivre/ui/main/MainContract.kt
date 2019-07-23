@@ -5,7 +5,7 @@ interface MainContract {
         fun initViews()
     }
 
-    interface Presenter{
+    interface Presenter {
 
     }
 }
