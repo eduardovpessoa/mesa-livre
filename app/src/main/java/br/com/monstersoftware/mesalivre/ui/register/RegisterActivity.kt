@@ -1,8 +1,8 @@
 package br.com.monstersoftware.mesalivre.ui.register
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.com.monstersoftware.mesalivre.R
 
 class RegisterActivity : AppCompatActivity(), RegisterContract.View {
@@ -25,6 +25,6 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
     }
 
     override fun registerError(msg: String?) {
-        Toast.makeText(this, String.format("%s %s", R.string.register_error, msg), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, String.format("%s", getString(R.string.register_error), msg), Toast.LENGTH_LONG).show()
     }
 }

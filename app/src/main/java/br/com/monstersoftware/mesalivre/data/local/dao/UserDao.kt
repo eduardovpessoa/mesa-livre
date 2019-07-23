@@ -1,7 +1,7 @@
-package br.com.monstersoftware.mesalivre.data.persistence.dao
+package br.com.monstersoftware.mesalivre.data.local.dao
 
 import androidx.room.*
-import br.com.monstersoftware.mesalivre.data.persistence.entity.User
+import br.com.monstersoftware.mesalivre.data.local.entity.User
 
 @Dao
 interface UserDao {

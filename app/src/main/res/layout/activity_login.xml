@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/txtUser"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -32,15 +32,15 @@
             app:layout_constraintTop_toBottomOf="@+id/imgLogin">
 
         <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edtUsuario"
+                android:id="@+id/edtUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Usuário"/>
+                android:hint="@string/username"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
+            android:id="@+id/txtPass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -50,13 +50,13 @@
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/txtUser">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:id="@+id/edtSenha"
+                android:id="@+id/edtPass"
                 android:layout_height="wrap_content"
-                android:hint="Senha"
+                android:hint="@string/password"
                 android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,11 +74,11 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:paddingStart="8dp"
-            android:text="Login"
+            android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"/>
+            app:layout_constraintTop_toBottomOf="@+id/txtPass"/>
 
     <View
             android:id="@+id/view"
@@ -89,14 +89,14 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:background="#b1cacaca"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOr"
+            app:layout_constraintEnd_toStartOf="@+id/txtOr"
             app:layout_constraintHorizontal_bias="0.983"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView4"/>
+            app:layout_constraintTop_toTopOf="@+id/txtOr"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtOr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -106,7 +106,7 @@
             android:layout_marginTop="12dp"
             android:enabled="false"
             android:focusable="false"
-            android:text="OU"
+            android:text="@string/or"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLogin"/>
@@ -120,29 +120,29 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#b1cacaca"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintBottom_toBottomOf="@+id/txtOr"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toTopOf="@+id/textView4"/>
+            app:layout_constraintStart_toEndOf="@+id/txtOr"
+            app:layout_constraintTop_toTopOf="@+id/txtOr"/>
 
     <com.shaishavgandhi.loginbuttons.FacebookButton
-            android:id="@+id/facebookButton"
+            android:id="@+id/btnFacebook"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="12dp"
             app:iconSize="30dp"
-            app:layout_constraintEnd_toStartOf="@+id/googleButton"
+            app:layout_constraintEnd_toStartOf="@+id/btnGoogle"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/txtOr"
             app:roundedCorner="true"
             app:roundedCornerRadius="60dp"/>
 
     <com.shaishavgandhi.loginbuttons.GoogleButton
-            android:id="@+id/googleButton"
+            android:id="@+id/btnGoogle"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
@@ -150,33 +150,33 @@
             app:iconSize="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/facebookButton"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/btnFacebook"
+            app:layout_constraintTop_toBottomOf="@+id/txtOr"
             app:roundedCorner="true"
             app:roundedCornerRadius="60dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/lblLoginCadastrar"
+            android:id="@+id/lblLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Você é novo?"
-            app:layout_constraintEnd_toStartOf="@+id/txtLoginCadastrar"
+            android:text="@string/new_user"
+            app:layout_constraintEnd_toStartOf="@+id/txtLogin"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/facebookButton"/>
+            app:layout_constraintTop_toBottomOf="@+id/btnFacebook"/>
 
     <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtLoginCadastrar"
+            android:id="@+id/txtLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="24dp"
-            android:text="Cadastre-se!"
+            android:text="@string/register"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/lblLoginCadastrar"
-            app:layout_constraintTop_toBottomOf="@+id/googleButton"/>
+            app:layout_constraintStart_toEndOf="@+id/lblLogin"
+            app:layout_constraintTop_toBottomOf="@+id/btnGoogle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

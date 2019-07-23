@@ -1,4 +1,4 @@
-package br.com.monstersoftware.mesalivre.data.persistence.entity
+package br.com.monstersoftware.mesalivre.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,5 +9,9 @@ data class User(
     var userName: String,
     var razaoSocial: String,
     var cnpj: String,
-    var password: String
+    var password: String,
+    var name: String,
+    var phoneNumber: String,
+    var rg: String,
+    var userType: Int
 )

@@ -1,15 +1,13 @@
-package br.com.monstersoftware.mesalivre.data.persistence
+package br.com.monstersoftware.mesalivre.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import br.com.monstersoftware.mesalivre.data.persistence.converter.DateConverter
-import br.com.monstersoftware.mesalivre.data.persistence.dao.TestDao
-import br.com.monstersoftware.mesalivre.data.persistence.dao.UserDao
-import br.com.monstersoftware.mesalivre.data.persistence.entity.Test
-import br.com.monstersoftware.mesalivre.data.persistence.entity.User
+import br.com.monstersoftware.mesalivre.data.local.converter.DateConverter
+import br.com.monstersoftware.mesalivre.data.local.dao.UserDao
+import br.com.monstersoftware.mesalivre.data.local.entity.User
 
 @Database(
     entities = [User::class],

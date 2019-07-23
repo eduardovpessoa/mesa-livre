@@ -1,4 +1,4 @@
-package br.com.monstersoftware.mesalivre.data.persistence.converter
+package br.com.monstersoftware.mesalivre.data.local.converter
 
 import androidx.room.TypeConverter
 import java.util.*

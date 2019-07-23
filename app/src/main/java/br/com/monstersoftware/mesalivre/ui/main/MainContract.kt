@@ -6,6 +6,6 @@ interface MainContract {
     }
 
     interface Presenter{
-        fun doLogin()
+
     }
 }

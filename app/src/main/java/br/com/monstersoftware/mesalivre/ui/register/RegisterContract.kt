@@ -1,6 +1,6 @@
 package br.com.monstersoftware.mesalivre.ui.register
 
-import br.com.monstersoftware.mesalivre.data.persistence.entity.User
+import br.com.monstersoftware.mesalivre.data.local.entity.User
 
 interface RegisterContract {
     interface View{
@@ -10,6 +10,7 @@ interface RegisterContract {
     }
 
     interface Presenter{
-        suspend fun register(user : User)
+        suspend fun register(user : User) : Any
+        suspend fun sendMail()
     }
 }
