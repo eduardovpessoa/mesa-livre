@@ -7,7 +7,7 @@ interface LoginContract {
     }
 
     interface Presenter{
-
+        fun doLogin()
     }
 
 }
