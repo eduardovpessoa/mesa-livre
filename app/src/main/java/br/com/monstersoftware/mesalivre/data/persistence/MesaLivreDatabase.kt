@@ -7,16 +7,18 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import br.com.monstersoftware.mesalivre.data.persistence.converter.DateConverter
 import br.com.monstersoftware.mesalivre.data.persistence.dao.TestDao
+import br.com.monstersoftware.mesalivre.data.persistence.dao.UserDao
 import br.com.monstersoftware.mesalivre.data.persistence.entity.Test
+import br.com.monstersoftware.mesalivre.data.persistence.entity.User
 
 @Database(
-    entities = [Test::class],
+    entities = [User::class],
     version = 1
 )
 @TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun testDao(): TestDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile

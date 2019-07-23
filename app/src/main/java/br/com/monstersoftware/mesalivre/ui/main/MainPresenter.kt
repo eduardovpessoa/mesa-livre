@@ -8,4 +8,8 @@ class MainPresenter(mainView : MainActivity) : MainContract.Presenter {
         view.initViews()
     }
 
+    override fun doLogin() {
+
+    }
+
 }

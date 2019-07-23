@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
-        btnLogin.setOnClickListener { presenter.doLogin() }
+        btnLogin.setOnClickListener { presenter?.doLogin() }
     }
 
 }
