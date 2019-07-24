@@ -1,5 +1,7 @@
 # Mesa Livre
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/22261fdb8f8e43ab9eca5027a3234006)](https://app.codacy.com/app/duduvp/mesa-livre?utm_source=github.com&utm_medium=referral&utm_content=duduvp/mesa-livre&utm_campaign=Badge_Grade_Dashboard)
+
 <img src="https://i.imgur.com/7Mj6HPb.png" width="250"/>
 <img src="https://i.imgur.com/4OEWv8d.png" width="250"/>
 <img src="https://i.imgur.com/4i44RMD.png" width="250"/>
