@@ -22,6 +22,15 @@ Este aplicativo Android foi desenvolvido gratuitamente como um teste para a empr
 
 - Kotlin (Linguagem de Programação)
 - MVP (Model, View, Presenter - Design Pattern)
-- Room (Persistência de dados)
 - Coroutines (Chamadas assíncronas, controle de threads, etc.)
-- Input Mask Android (Máscara dos campos de cadastro, ex: CPF/CNPJ, Telefone, etc.)
+- Input Mask Android (Máscara dos campos do cadastro, ex: CPF/CNPJ, Telefone, etc.)
+- Material Design
+- Room (Persistência de dados)
+- Social Login Buttons (Facebook/Google)
+
+## Vídeo DEMO
+
+<b><a href="https://www.youtube.com/watch?v=7RizrMEm1lE" target="_blank">Clique aqui p/ ver o vídeo completo no YouTube! ;)</a><b/><br/><br/>
+<img src="https://j.gifs.com/Jy7EZP.gif"/>
+
+Desde já muito obrigado pela oportunidade! Me coloco a disposição para eventuais dúvidas ou um futuro contato! ;)
