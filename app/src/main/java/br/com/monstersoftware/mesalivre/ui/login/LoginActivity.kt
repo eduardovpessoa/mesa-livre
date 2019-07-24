@@ -20,6 +20,8 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         btnLogin.setOnClickListener { presenter?.doLogin(edtUser.text.toString(), edtPass.text.toString()) }
         lblLogin.setOnClickListener { presenter?.openRegister() }
         txtLogin.setOnClickListener { presenter?.openRegister() }
+        btnFacebook.setOnClickListener { facebookLogin() }
+        btnGoogle.setOnClickListener { googleLogin() }
     }
 
     override fun facebookLogin() {
@@ -35,7 +37,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     }
 
     override fun setPasswordError() {
-        edtUser.error = getString(R.string.login_passwd_error)
+        edtPass.error = getString(R.string.login_passwd_error)
     }
 
     override fun showLoginError() {

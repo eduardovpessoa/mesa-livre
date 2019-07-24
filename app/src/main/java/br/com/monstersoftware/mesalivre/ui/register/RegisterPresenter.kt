@@ -1,13 +1,11 @@
 package br.com.monstersoftware.mesalivre.ui.register
 
-import android.widget.EditText
 import br.com.monstersoftware.mesalivre.R
 import br.com.monstersoftware.mesalivre.data.local.AppDatabase
 import br.com.monstersoftware.mesalivre.data.local.dao.UserDao
 import br.com.monstersoftware.mesalivre.data.local.entity.User
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.view.*
-import kotlinx.android.synthetic.main.activity_register.view.edtCnpj
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -32,31 +30,62 @@ class RegisterPresenter(registerView: RegisterActivity) : RegisterContract.Prese
             withContext(Dispatchers.Main) {
                 when (id) {
                     R.id.rbProfessional -> {
-                        view.edtCnpj.visibility = EditText.INVISIBLE
-                        view.edtRazaoSocial.visibility = EditText.INVISIBLE
-                        view.edtName.visibility = EditText.VISIBLE
-                        view.edtPhone.visibility = EditText.VISIBLE
-                        view.edtCpf.visibility = EditText.VISIBLE
-                        view.edtRg.visibility = EditText.VISIBLE
+                        view.tilCnpj.visibility = TextInputLayout.GONE
+                        view.tilRazao.visibility = TextInputLayout.GONE
+                        view.tilName.visibility = TextInputLayout.VISIBLE
+                        view.tilPhone.visibility = TextInputLayout.VISIBLE
+                        view.tilCpf.visibility = TextInputLayout.VISIBLE
+                        view.tilRg.visibility = TextInputLayout.VISIBLE
                     }
                     else -> {
-                        view.edtCnpj.visibility = EditText.VISIBLE
-                        view.edtRazaoSocial.visibility = EditText.VISIBLE
-                        view.edtName.visibility = EditText.INVISIBLE
-                        view.edtPhone.visibility = EditText.INVISIBLE
-                        view.edtCpf.visibility = EditText.INVISIBLE
-                        view.edtRg.visibility = EditText.INVISIBLE
+                        view.tilCnpj.visibility = TextInputLayout.VISIBLE
+                        view.tilRazao.visibility = TextInputLayout.VISIBLE
+                        view.tilName.visibility = TextInputLayout.GONE
+                        view.tilPhone.visibility = TextInputLayout.GONE
+                        view.tilCpf.visibility = TextInputLayout.GONE
+                        view.tilRg.visibility = TextInputLayout.GONE
                     }
                 }
             }
         }
     }
 
-    override fun register(user: User) {
+    override fun register() {
         launch {
             try {
-                userDao.insert(user)
+                var newUser: User
                 withContext(Dispatchers.Main) {
+                    when (view.rgType.checkedRadioButtonId) {
+                        R.id.rbProfessional -> {
+                            newUser = User(
+                                0,
+                                view.edtUsername.text.toString(),
+                                "", "",
+                                view.edtPass.text.toString(),
+                                view.edtMail.text.toString(),
+                                view.edtName.text.toString(),
+                                view.edtPhone.toString(),
+                                view.edtCpf.toString(),
+                                view.edtRg.toString(),
+                                3
+                            )
+                        }
+                        else -> {
+                            newUser = User(
+                                0,
+                                view.edtUsername.text.toString(),
+                                view.edtRazaoSocial.text.toString(),
+                                view.edtCnpj.text.toString(),
+                                view.edtPass.text.toString(),
+                                view.edtMail.text.toString(),
+                                "", "", "", "",
+                                if (view.rgType.checkedRadioButtonId == R.id.rbAdministrator) 1 else 2
+                            )
+                        }
+                    }
+                    withContext(Dispatchers.IO) {
+                        userDao.insert(newUser)
+                    }
                     view.registerOk()
                 }
             } catch (e: Throwable) {

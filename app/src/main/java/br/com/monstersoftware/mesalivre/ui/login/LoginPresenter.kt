@@ -1,5 +1,6 @@
 package br.com.monstersoftware.mesalivre.ui.login
 
+import android.content.Context
 import android.content.Intent
 import br.com.monstersoftware.mesalivre.data.local.AppDatabase
 import br.com.monstersoftware.mesalivre.data.local.dao.UserDao
@@ -18,14 +19,31 @@ class LoginPresenter(loginView: LoginActivity) : LoginContract.Presenter, Corout
     override val coroutineContext: CoroutineContext get() = Dispatchers.IO + job
 
     init {
+        val sharedPreferences = view.getSharedPreferences("user", Context.MODE_PRIVATE)
+        val name = sharedPreferences.getString("name", "")
+        val email = sharedPreferences.getString("email", "")
+        if (!name.isNullOrBlank() && !email.isNullOrBlank()) {
+            launch {
+                withContext(Dispatchers.Main) {
+                    view.startActivity(Intent(view, MainActivity::class.java))
+                    view.finish()
+                }
+            }
+        }
         view.initViews()
         db = AppDatabase.getDatabase(view)
         userDao = db.userDao()
     }
 
     override fun doLogin(user: String, passwd: String) {
-        if (user.isBlank()) view.setUsernameError()
-        if (passwd.isBlank()) view.setPasswordError()
+        if (user.isBlank()) {
+            view.setUsernameError()
+            return
+        }
+        if (passwd.isBlank()) {
+            view.setPasswordError()
+            return
+        }
         launch {
             val users: List<User> = userDao.findUser(user, passwd)
             if (users.isNullOrEmpty()) {
@@ -33,6 +51,11 @@ class LoginPresenter(loginView: LoginActivity) : LoginContract.Presenter, Corout
                     view.showLoginError()
                 }
             } else {
+                val sp = view.getSharedPreferences("user", Context.MODE_PRIVATE)
+                var editor = sp.edit()
+                editor.putString("name", if (users[0].name.isBlank()) users[0].razaoSocial else users[0].name)
+                editor.putString("email", users[0].email)
+                editor.apply()
                 withContext(Dispatchers.Main) {
                     view.startActivity(Intent(view, MainActivity::class.java))
                     view.finish()

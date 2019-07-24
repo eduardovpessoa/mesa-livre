@@ -1,10 +1,12 @@
 package br.com.monstersoftware.mesalivre.ui.register
 
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.monstersoftware.mesalivre.R
 import br.com.monstersoftware.mesalivre.data.local.entity.User
+import com.redmadrobot.inputmask.MaskedTextChangedListener
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterContract.View {
@@ -19,7 +21,16 @@ class RegisterActivity : AppCompatActivity(), RegisterContract.View {
 
     override fun initViews() {
         rgType.setOnCheckedChangeListener { _, i -> presenter?.changeUserType(i) }
-        //btnRegister.setOnClickListener { presenter?.register(User()) }
+        btnRegister.setOnClickListener { presenter?.register() }
+        val cpfListener = MaskedTextChangedListener("[000]{.}[000]{.}[000]{-}[00]", edtCpf)
+        edtCpf.addTextChangedListener(cpfListener)
+        edtCpf.onFocusChangeListener = cpfListener
+        val cnpjListener = MaskedTextChangedListener("[00]{.}[000]{.}[000]{/}[0000]{-}[00]", edtCnpj)
+        edtCnpj.addTextChangedListener(cnpjListener)
+        edtCnpj.onFocusChangeListener = cnpjListener
+        val phoneListener = MaskedTextChangedListener("([00]) [00000]-[0000]", edtPhone)
+        edtPhone.addTextChangedListener(phoneListener)
+        edtPhone.onFocusChangeListener = phoneListener
     }
 
     override fun registerOk() {

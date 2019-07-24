@@ -1,18 +1,20 @@
 <resources>
     <string name="app_name">Mesa Livre</string>
+    <string name="activity_login">Mesa Livre - Login</string>
+    <string name="activity_main">Mesa Livre - Início</string>
+    <string name="activity_register">Mesa Livre - Cadastro</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configurações</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="menu_home">Início</string>
+    <string name="menu_gallery">Lugares</string>
+    <string name="menu_tools">Configurações</string>
+    <string name="menu_share">Sobre</string>
+    <string name="menu_send">Sair</string>
     <string name="register_ok">Cadastrado com sucesso!</string>
     <string name="register_error" formatted="false">Problemas ao realizar o cadastro! Detalhes: %s</string>
     <string name="password">Senha</string>
@@ -32,11 +34,13 @@
     <string name="login_error">Usuário ou senha inválidos!</string>
     <string name="login_user_error">Usuário inválido!</string>
     <string name="login_passwd_error">Senha inválida!</string>
-    <string name="communicate">Communicate</string>
+    <string name="communicate">Opções</string>
     <string name="rg">RG</string>
     <string name="cpf">CPF</string>
     <string name="name">Nome</string>
     <string name="phone">Celular</string>
     <string name="facebook_login">Login via Facebook disponível em breve...</string>
     <string name="google_login">Login via Google disponível em breve...</string>
+    <string name="developed">Desenvolvido por Eduardo Viana Pessoa - v.1.0</string>
+    <string name="logo_da_vibbra">Logo da Vibbra</string>
 </resources>
